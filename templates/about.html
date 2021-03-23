@@ -9,9 +9,18 @@
 
         <section class="inner-page">
             <div class="container">
-                <p>
-                    Example inner page template
-                </p>
+
+                {% for a in about %}
+
+                    <h3>{{ a.title }}</h3>
+                    <p>
+                        {{ a.details }}
+                    </p>
+                    <p>{{ a.image }}</p>
+
+                {% endfor %}
+
+
             </div>
         </section>
 
