@@ -15,3 +15,14 @@ python manage.py migrate
 python manage.py createsuperuser
 
 (For image: python -m pip install Pillow)
+
+
+
+Git Commands
+-------------
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/mesujitg/BroadWay.git
+git push -u origin main
