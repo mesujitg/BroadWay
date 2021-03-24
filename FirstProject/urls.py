@@ -20,6 +20,6 @@ from FirstProject import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.show_home),
-    path('about', include('about.urls')),
+    path('about/', include('about.urls')),
     path('portfolio', views.show_portfolio),
 ]

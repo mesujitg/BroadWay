@@ -2,4 +2,8 @@ from django.contrib import admin
 from about.models import About
 
 
-admin.site.register(About)
+class AboutAdmin(admin.ModelAdmin):
+    list_display = ['title', 'details', 'image']
+
+
+admin.site.register(About, AboutAdmin)
