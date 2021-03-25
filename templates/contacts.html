@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <main id="main">
+
+        {% include 'bread.html' %}
+
+        <section class="inner-page">
+            <div class="container">
+
+                <ul>
+                    {% for c in contacts %}
+
+                        <li>{{ c.details }}</li>
+
+                    {% endfor %}
+
+                </ul>
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+{% endblock %}

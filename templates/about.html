@@ -12,11 +12,20 @@
 
                 {% for a in about %}
 
-                    <h3>{{ a.title }}</h3>
-                    <p>
-                        {{ a.details }}
-                    </p>
-                    <p>{{ a.image }}</p>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img src="{{ MEDIA_URL }}{{ a.image }}" alt=""
+                                 style="height: 300px; width: 100%;"/>
+                        </div>
+
+                        <div class="col-sm-8">
+                            <h3>{{ a.title }}</h3>
+
+                            <p>
+                                {{ a.details }}
+                            </p>
+                        </div>
+                    </div>
 
                 {% endfor %}
 

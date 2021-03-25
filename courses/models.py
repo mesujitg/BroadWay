@@ -7,3 +7,9 @@ class Course(models.Model):
     details = models.TextField()
     fee = models.FloatField()
 
+    def __str__(self):
+        return self.name
+
+    # class Meta:
+    #     ordering = ('name', 'duration', 'fee', 'details')
+
