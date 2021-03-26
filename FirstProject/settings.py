@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'contacts',
     'courses',
     'students',
-    'staffs'
+    'staffs',
+    'ckeditor',
+    'ckeditor_uploader'
 ]
 
 MIDDLEWARE = [
@@ -129,3 +131,5 @@ STATICFILES_DIRS = [BASE_DIR, 'static']
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CKEDITOR_UPLOAD_PATH = 'ckuploads/'

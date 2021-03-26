@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <main id="main">
+
+        {% include 'bread.html' %}
+
+        <section class="inner-page">
+            <div class="container">
+
+                <div class="row">
+
+                    {% for c in courses %}
+                        <div class="col-lg-4 col-md-6" style="margin: 10px 0;">
+
+                            <div class="card" style="width: 18rem;">
+                                <img src="{{ MEDIA_URL }}{{ c.image }}" class="card-img-top"
+                                     alt="{{ c.name }}" style="height: 250px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ c.name }}</h5>
+                                    <p class="card-text">{{ c.details }}</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">{{ c.duration }} Months</li>
+                                    <li class="list-group-item">Rs. {{ c.fee }}</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Duration</th>
+                        <th>Fee</th>
+                        <th>Details</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                    {% for c in courses %}
+
+                        <tr>
+                            <td>{{ c.name }}</td>
+                            <td>{{ c.duration }}</td>
+                            <td>{{ c.fee }}</td>
+                            <td>{{ c.details }}</td>
+                        </tr>
+
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+
+
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+{% endblock %}
