@@ -9,15 +9,21 @@
 
         <section class="inner-page">
             <div class="container">
-
-                <ul>
+                <div class="row">
                     {% for c in contacts %}
 
-                        <li>{{ c.details }}</li>
+                        <div class="col-md-3">
+                            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                                <div class="card-header">{{ c.title }}</div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ c.details }}</h5>
+{#                                    <p class="card-text">{{ c.details }}</p>#}
+                                </div>
+                            </div>
+                        </div>
 
                     {% endfor %}
-
-                </ul>
+                </div>
             </div>
         </section>
 

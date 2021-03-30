@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'courses',
     'students',
     'staffs',
+    'subscribers',
     'ckeditor',
     'ckeditor_uploader'
 ]
