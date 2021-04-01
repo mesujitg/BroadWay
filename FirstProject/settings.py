@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'staffs',
     'subscribers',
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -58,6 +59,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'FirstProject.urls'
+
+LOGIN_URL = 'login'
+
+
 
 TEMPLATES = [
     {
@@ -134,3 +139,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CKEDITOR_UPLOAD_PATH = 'ckuploads/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+

@@ -55,3 +55,8 @@ def do_register(request):
 
     form = UserCreationForm()
     return render(request, 'register.html', {'form': form})
+
+
+def do_logout(request):
+    auth.logout(request)
+    return redirect('home')
