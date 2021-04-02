@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
+from FirstProject.forms import UserRegistrationForm
 from subscribers.models import Subscriber
 
 
@@ -42,18 +43,21 @@ def do_login(request):
 
 def do_register(request):
     if request.method == 'POST':
-        fn = request.POST['fn']
-        ln = request.POST['ln']
-        em = request.POST['em']
-        un = request.POST['un']
-        pw = request.POST['pw']
-
-        user = User(first_name=fn, last_name=ln, email=em, username=un, password=pw)
-        user.save()
+        form = UserRegistrationForm(request.POST)
+        form.save()
+        # fn = request.POST['fn']
+        # ln = request.POST['ln']
+        # em = request.POST['em']
+        # un = request.POST['un']
+        # pw = request.POST['pw']
+        #
+        # user = User(first_name=fn, last_name=ln, email=em, username=un, password=pw)
+        # user.save()
         messages.success(request, 'Registered Successfully !')
         return redirect('login')
 
-    form = UserCreationForm()
+    # form = UserRegistrationForm()
+    form = UserRegistrationForm()
     return render(request, 'register.html', {'form': form})
 
 
