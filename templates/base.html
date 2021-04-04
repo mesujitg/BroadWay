@@ -11,7 +11,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'images/logo1.png' %}" rel="icon">
     <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -54,7 +54,11 @@
         {% endif %}
         <div class="header-container d-flex align-items-center justify-content-between">
             <div class="logo">
-                <h1 class="text-light"><a href="index.html"><span>My Site</span></a></h1>
+                <h1 class="text-light">
+                    <a href="{% url 'home' %}">
+                        <span><img src="{% static 'images/logo.png' %}" alt="Company Logo"></span>
+                    </a>
+                </h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid"></a>-->
             </div>

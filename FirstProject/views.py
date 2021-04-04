@@ -5,11 +5,17 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 from FirstProject.forms import UserRegistrationForm
+from about.models import About
+from counter.models import Counter
+from counts.models import Count
 from subscribers.models import Subscriber
 
 
 def show_home(request):
-    return render(request, 'index.html')
+    intro = About.objects.filter(title='Introduction')
+    counts = Count.objects.get(id=1)
+    counters = Counter.objects.all()
+    return render(request, 'index.html', {'intro': intro[0], 'counts': counts, 'counters': counters})
 
 
 def show_portfolio(request):
