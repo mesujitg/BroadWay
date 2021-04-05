@@ -5,9 +5,11 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 from FirstProject.forms import UserRegistrationForm
+from FirstProject.settings import MEDIA_URL
 from about.models import About
 from counter.models import Counter
 from counts.models import Count
+from courses.models import Course, Type
 from subscribers.models import Subscriber
 
 
@@ -15,7 +17,10 @@ def show_home(request):
     intro = About.objects.filter(title='Introduction')
     counts = Count.objects.get(id=1)
     counters = Counter.objects.all()
-    return render(request, 'index.html', {'intro': intro[0], 'counts': counts, 'counters': counters})
+    courses = Course.objects.all()
+    types = Type.objects.all()
+    return render(request, 'index.html', {'intro': intro[0], 'counts': counts, 'counters': counters,
+                                          'types': types, 'courses': courses, 'MEDIA_URL': MEDIA_URL})
 
 
 def show_portfolio(request):
@@ -38,6 +43,7 @@ def do_login(request):
 
         if user is not None:
             auth.login(request, user)
+            # request.session['username'] = un
             messages.success(request, 'You are logged in !!!')
             return redirect('home')
         else:

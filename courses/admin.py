@@ -1,5 +1,5 @@
 from django.contrib import admin
-from courses.models import Course
+from courses.models import Course, Type
 
 
 class CourseAdmin(admin.ModelAdmin):
@@ -7,3 +7,4 @@ class CourseAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Course, CourseAdmin)
+admin.site.register(Type)

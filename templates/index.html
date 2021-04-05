@@ -47,38 +47,6 @@
 
                     {% endfor %}
 
-                    {#                <div class="col-lg-1"></div>#}
-                    {#                <div class="col-lg-2 col-6 text-center">#}
-                    {#                    <span data-purecounter-start="0" data-purecounter-end="{{ counts.student }}" data-purecounter-duration="1"#}
-                    {#                          class="purecounter"></span>#}
-                    {#                    <p>Students</p>#}
-                    {#                </div>#}
-                    {##}
-                    {#                <div class="col-lg-2 col-6 text-center">#}
-                    {#                    <span data-purecounter-start="0" data-purecounter-end="{{ counts.current_student }}" data-purecounter-duration="1"#}
-                    {#                          class="purecounter"></span>#}
-                    {#                    <p>Current Students</p>#}
-                    {#                </div>#}
-                    {##}
-                    {#                <div class="col-lg-2 col-6 text-center">#}
-                    {#                    <span data-purecounter-start="0" data-purecounter-end="{{ counts.courses }}" data-purecounter-duration="1"#}
-                    {#                          class="purecounter"></span>#}
-                    {#                    <p>Courses</p>#}
-                    {#                </div>#}
-                    {##}
-                    {#                <div class="col-lg-2 col-6 text-center">#}
-                    {#                    <span data-purecounter-start="0" data-purecounter-end="{{ counts.client }}" data-purecounter-duration="1"#}
-                    {#                          class="purecounter"></span>#}
-                    {#                    <p>Clients</p>#}
-                    {#                </div>#}
-                    {##}
-                    {#                <div class="col-lg-2 col-6 text-center">#}
-                    {#                    <span data-purecounter-start="0" data-purecounter-end="{{ counts.teacher }}" data-purecounter-duration="1"#}
-                    {#                          class="purecounter"></span>#}
-                    {#                    <p>Teacher</p>#}
-                    {#                </div>#}
-                    {#                <div class="col-lg-1"></div>#}
-
                 </div>
 
             </div>
@@ -91,7 +59,7 @@
                 <div class="row">
                     <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-right">
                         <div class="content">
-                            <h3>Why Choose Bethany for your company website?</h3>
+                            <h3>Why Choose Broad Way for your Study?</h3>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut
@@ -111,7 +79,7 @@
                                      data-aos-delay="100">
                                     <div class="icon-box mt-4 mt-xl-0">
                                         <i class="bx bx-receipt"></i>
-                                        <h4>Corporis voluptates sit</h4>
+                                        <h4>Professional Course</h4>
                                         <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
                                             aliquip</p>
                                     </div>
@@ -120,7 +88,7 @@
                                      data-aos-delay="200">
                                     <div class="icon-box mt-4 mt-xl-0">
                                         <i class="bx bx-cube-alt"></i>
-                                        <h4>Ullamco laboris ladore pan</h4>
+                                        <h4>Career Opportunities</h4>
                                         <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                                             deserunt</p>
                                     </div>
@@ -129,7 +97,7 @@
                                      data-aos-delay="300">
                                     <div class="icon-box mt-4 mt-xl-0">
                                         <i class="bx bx-images"></i>
-                                        <h4>Labore consequatur</h4>
+                                        <h4>Various Choices</h4>
                                         <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis
                                             facere</p>
                                     </div>
@@ -141,22 +109,6 @@
 
             </div>
         </section><!-- End Why Us Section -->
-
-        <!-- ======= Cta Section ======= -->
-        <section id="cta" class="cta">
-            <div class="container">
-
-                <div class="text-center" data-aos="zoom-in">
-                    <h3>Call To Action</h3>
-                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit
-                        anim id est laborum.</p>
-                    <a class="cta-btn" href="#">Call To Action</a>
-                </div>
-
-            </div>
-        </section><!-- End Cta Section -->
 
         <!-- ======= Services Section ======= -->
         <section id="services" class="services section-bg">
@@ -217,7 +169,7 @@
             <div class="container">
 
                 <div class="section-title" data-aos="fade-left">
-                    <h2>Portfolio</h2>
+                    <h2>Courses</h2>
                     <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
                         sint
                         consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
@@ -229,37 +181,25 @@
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="portfolio-flters">
                             <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-web">Web</li>
+
+                            {% for type in types %}
+                            <li data-filter=".filter-{{ type.title }}">{{ type.title }}</li>
+                            {% endfor %}
+
                         </ul>
                     </div>
                 </div>
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    {% for c in courses %}
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-{{ c.type }}">
                         <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">
+                            <img src="{{ MEDIA_URL }}{{ c.image }}" class="img-fluid" alt="{{ c.name }} Image"
+                                 style="height: 250px; width: 100%">
                             <div class="portfolio-info">
-                                <h4>App 1</h4>
-                                <p>App</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/"img/portfolio/portfolio-1.jpg' %}"
-                                       data-gallery="portfolioGallery"
-                                       class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
+                                <h4>{{ c.name }}</h4>
+                                <p>{{ c.duration }} Months</p>
                                 <div class="portfolio-links">
                                     <a href="{% static 'assets/"img/portfolio/portfolio-2.jpg' %}"
                                        data-gallery="portfolioGallery"
@@ -269,118 +209,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 2</h4>
-                                <p>App</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/"img/portfolio/portfolio-3.jpg' %}"
-                                       data-gallery="portfolioGallery"
-                                       class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 2</h4>
-                                <p>Card</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/"img/portfolio/portfolio-4.jpg' %}"
-                                       data-gallery="portfolioGallery"
-                                       class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 2</h4>
-                                <p>Web</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/"img/portfolio/portfolio-5.jpg' %}"
-                                       data-gallery="portfolioGallery"
-                                       class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 3</h4>
-                                <p>App</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/"img/portfolio/portfolio-6.jpg' %}"
-                                       data-gallery="portfolioGallery"
-                                       class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 1</h4>
-                                <p>Card</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/"img/portfolio/portfolio-7.jpg' %}"
-                                       data-gallery="portfolioGallery"
-                                       class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 3</h4>
-                                <p>Card</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/"img/portfolio/portfolio-8.jpg' %}"
-                                       data-gallery="portfolioGallery"
-                                       class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-9.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/"img/portfolio/portfolio-9.jpg' %}"
-                                       data-gallery="portfolioGallery"
-                                       class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
 
                 </div>
 
