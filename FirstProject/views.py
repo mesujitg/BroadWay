@@ -47,7 +47,7 @@ def do_login(request):
             messages.success(request, 'You are logged in !!!')
             return redirect('home')
         else:
-            messages.error(request, 'Wrong Credentials')
+            messages.warning(request, 'Wrong Credentials')
             return redirect('login')
 
     return render(request, 'login.html')

@@ -65,8 +65,8 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="/">Home</a></li>
-                    <li><a class="nav-link scrollto" href="/about">About</a></li>
+                    <li><a class="nav-link scrollto" href="/">Home</a></li>
+                    <li><a class="nav-link scrollto {% if 'about' in request.path %} active {% endif %}" href="/about">About</a></li>
                     <li><a class="nav-link scrollto" href="{% url 'courses' %}">Courses</a></li>
                     <li><a class="nav-link scrollto " href="/portfolio">Opportunities</a></li>
                     <li><a class="nav-link scrollto" href="#">Team</a></li>

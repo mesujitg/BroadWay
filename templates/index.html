@@ -5,7 +5,7 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
         <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
-            <h1>Your New Online Presence with Bethany</h1>
+            <h1>Your New Online Presence with Broadway</h1>
             <h2>We are team of talented designers making websites with Bootstrap</h2>
             <a href="#about" class="btn-get-started scrollto">Get Started</a>
         </div>
@@ -201,10 +201,13 @@
                                 <h4>{{ c.name }}</h4>
                                 <p>{{ c.duration }} Months</p>
                                 <div class="portfolio-links">
-                                    <a href="{% static 'assets/"img/portfolio/portfolio-2.jpg' %}"
-                                       data-gallery="portfolioGallery"
-                                       class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                    <a href="{{ MEDIA_URL }}{{ c.image }}" data-gallery="portfolioGallery"
+                                       class="portfolio-lightbox" title="Web 3">
+                                        <i class="bx bx-plus"></i>
+                                    </a>
+                                    <a href="{% url 'single_course' id=c.id %}" title="More Details">
+                                        <i class="bx bx-link"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
