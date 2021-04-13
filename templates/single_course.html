@@ -51,7 +51,7 @@
                         <div class="portfolio-description">
                             <h2>Course Details</h2>
                             <p>
-                                {{ course.details }}
+                                {{ course.details|slice:"0:15" }}
                             </p>
                         </div>
                     </div>

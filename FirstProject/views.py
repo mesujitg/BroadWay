@@ -18,8 +18,8 @@ def show_home(request):
     counters = Counter.objects.all()
     courses = Course.objects.all()
     types = Type.objects.all()
-    return render(request, 'index.html', {'intro': intro[0], 'counters': counters,
-                                          'types': types, 'courses': courses, 'MEDIA_URL': MEDIA_URL})
+    return render(request, 'index.html', {'intro': intro, 'courses': courses,'counters': counters,
+                                          'types': types, 'MEDIA_URL': MEDIA_URL})
 
 
 def show_portfolio(request):

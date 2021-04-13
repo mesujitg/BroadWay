@@ -21,6 +21,9 @@ class Course(models.Model):
     def __str__(self):
         return self.name
 
+    def add(self, a, b):
+        return a + b
+
     # class Meta:
     #     ordering = ('name', 'duration', 'fee', 'details')
 

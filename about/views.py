@@ -7,3 +7,13 @@ from about.models import About
 def show_about(request):
     about = About.objects.all()
     return render(request, 'about.html', {'about': about, 'MEDIA_URL': MEDIA_URL})
+
+'''
+SOAP API
+---------
+
+REST based API
+---------------
+POST GET PUT DELETE
+'''
+
