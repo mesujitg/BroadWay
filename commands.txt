@@ -26,3 +26,12 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/mesujitg/BroadWay.git
 git push -u origin main
+
+
+REST API Django
+----------------
+1. install djangorestapi, add 'rest_framework' in installed app
+2. create Serializer class for defining required model and fields
+3. create Viewset class for required model defining
+   serializer and queryset
+4. define router providing the Viewset
